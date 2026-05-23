@@ -118,3 +118,7 @@ firebasekey.json
 # Antigravity Agent and Skills
 .agents/
 skills-lock.json
+
+# Scripts Locais
+screenshot.js
+screenshot.cjs
