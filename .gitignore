@@ -114,3 +114,7 @@ firebasekey.json
 
 # Firebase CLI cache
 .firebase/
+
+# Antigravity Agent and Skills
+.agents/
+skills-lock.json
