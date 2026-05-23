@@ -1,0 +1,11 @@
+{
+  "projects": {},
+  "targets": {},
+  "etags": {
+    "roda-criativa": {
+      "extensionInstances": {
+        "firestore-bigquery-export": "0ce42bc534a7b12519062182929ae3ca1e0c61eacfce5d61eddfb65603b9b593"
+      }
+    }
+  }
+}

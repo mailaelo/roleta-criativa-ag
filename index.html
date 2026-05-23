@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roleta Criativa</title>
+  <meta name="description" content="Spin the wheel of your Google Drive media to inspire your next creative session.">
+  
+  <!-- Web Awesome (Shoelace) CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.14.0/cdn/themes/light.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.14.0/cdn/themes/dark.css" />
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.14.0/cdn/shoelace-autoloader.js"></script>
+  
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body class="app-body">
+
+  <!-- Top Navigation Toolbar -->
+  <nav class="app-toolbar">
+    <h1 class="toolbar-title"><span class="gradient-text">Roleta</span> Criativa</h1>
+    <div class="toolbar-actions">
+      <sl-button id="navHomeBtn" variant="default" pill size="small">
+        <sl-icon slot="prefix" name="house"></sl-icon>
+        Nova Roleta
+      </sl-button>
+      <sl-button id="navDashboardBtn" variant="primary" pill size="small" class="hidden">
+        <sl-icon slot="prefix" name="graph-up"></sl-icon>
+        Meu Progresso
+      </sl-button>
+      <sl-icon-button id="tutorialBtn" name="question-circle" style="font-size: 1.5rem; color: var(--text-color);" label="Como Funciona"></sl-icon-button>
+      <sl-icon-button id="themeToggle" name="moon-fill" style="font-size: 1.5rem; color: var(--text-color);" label="Alternar Tema"></sl-icon-button>
+      
+      <div id="userProfile" class="hidden" style="display: flex; align-items: center; gap: 8px; margin-left: 12px; padding-left: 12px; border-left: 1px solid var(--glass-border);">
+        <sl-icon name="person-circle" style="font-size: 1.25rem; color: var(--sl-color-primary-400);"></sl-icon>
+        <span id="userEmailDisplay" style="font-size: 0.875rem; font-weight: 600; color: var(--text-color);"></span>
+        <sl-button id="logoutBtn" variant="danger" size="small" outline style="margin-left: 4px;">Sair</sl-button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Container -->
+  <main class="main-container glass-panel">
+    
+    <!-- Loader -->
+    <div id="loader" class="loader-overlay hidden">
+      <sl-spinner style="font-size: 3rem; --indicator-color: var(--sl-color-primary-500);"></sl-spinner>
+      <p id="loaderText">Carregando...</p>
+    </div>
+
+    <!-- View 1: Setup View -->
+    <section id="setupView" class="view-section">
+      <div class="icon-container">
+        <sl-icon name="folder-symlink" style="font-size: 3rem; color: white;"></sl-icon>
+      </div>
+      <h2>Conecte seu Drive</h2>
+      <p class="subtitle">Cole um link público de pasta do Google Drive contendo imagens ou vídeos.</p>
+      
+      <form id="setupForm" class="setup-form">
+        <sl-input 
+          type="url" 
+          id="driveUrl" 
+          required 
+          placeholder="https://drive.google.com/drive/folders/..." 
+          clearable>
+        </sl-input>
+        <sl-button type="submit" variant="primary" size="large" pill class="w-full shadow-btn">
+          Gerar Roleta
+        </sl-button>
+      </form>
+    </section>
+
+    <!-- View 2: Wheel View -->
+    <section id="wheelView" class="view-section hidden">
+      <div id="wheelCanvasContainer" class="wheel-container"></div>
+      <sl-button id="spinBtn" variant="success" size="large" pill class="spin-btn shadow-btn">
+        GIRAR A ROLETA
+      </sl-button>
+    </section>
+
+    <!-- View 3: Media View -->
+    <section id="mediaView" class="view-section hidden">
+    </section>
+
+    <!-- View 4: Mood Tracker View -->
+    <section id="moodView" class="view-section hidden">
+    </section>
+
+    <!-- View 5: Analytics View -->
+    <section id="analyticsView" class="view-section analytics-container hidden">
+    </section>
+
+  </main>
+
+  <tutorial-dialog id="tutorialDialog"></tutorial-dialog>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>

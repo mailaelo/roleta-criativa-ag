@@ -1,0 +1,35 @@
+{
+  "name": "roleta-criativa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev:frontend": "vite",
+    "dev:backend": "node --experimental-strip-types server.ts",
+    "dev": "npm run dev:backend & npm run dev:frontend",
+    "build": "tsc && vite build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@awesome.me/webawesome": "^3.7.0",
+    "chart.js": "^4.5.1",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "firebase": "^12.13.0",
+    "firebase-admin": "^13.10.0",
+    "i18next": "^26.2.0",
+    "puppeteer": "^25.0.4"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.7.0",
+    "typescript": "^6.0.3",
+    "vite": "^8.0.13"
+  }
+}
